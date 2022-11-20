@@ -10,7 +10,7 @@ class Orders extends Controller
 {
  
     public function index(){
-        $orders = Http::get('http://127.0.0.1:8080/api/orders')->collect();
+        $orders = Http::get('http://127.0.0.1:8000/api/orders')->collect();
         return view('firebase.orders.index', compact('orders')) ;
     }
 
@@ -21,7 +21,7 @@ class Orders extends Controller
 
     public function store(Request $request){
         //send request to our middleware and save data in database
-         $response = Http::post('http://127.0.0.1:8080/api/store', [
+         $response = Http::post('http://127.0.0.1:8000/api/store', [
             'title' => $request['title'],
             'total' => $request['quantity'],
         ]);
