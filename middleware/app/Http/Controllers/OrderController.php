@@ -14,11 +14,6 @@ class OrderController extends Controller
   
     public function __construct()
     {
-        //get access to realtime db
-        $firebase = (new Factory)
-        ->withServiceAccount(__DIR__.'/y76-task-firebase-adminsdk-tkios-4c955cfb3c.json')
-        ->withDatabaseUri('https://y76-task-default-rtdb.europe-west1.firebasedatabase.app');
-        $this->database = $firebase->createDatabase();
         // get access to firestore db
         $factory = (new Factory)->withServiceAccount(__DIR__.'/y76-task-firebase-adminsdk-tkios-4c955cfb3c.json');
         $this->firestore = $factory->createFirestore()->database();
